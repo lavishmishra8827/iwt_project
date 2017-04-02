@@ -59,10 +59,15 @@ public class SaveProduct extends HttpServlet {
             }
         }
         //out.println(v1+","+v2+","+v3);
-        
+        String s=request.getParameter("user");
+        String db="";
+        if(s.equals("student"))
+        db="creait";
+        else 
+        db="teacher";
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_web","root","");
-        String qr="insert into creait values(?,?,?,?,?,?,?)";
+        String qr="insert into "+db+" values(?,?,?,?,?,?,?)";
         PreparedStatement ps=con.prepareStatement(qr);
         ps.setString(1,v1);
         ps.setString(2, v2);

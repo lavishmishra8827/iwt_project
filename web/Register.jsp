@@ -103,7 +103,7 @@
 
     <body>
 
-
+        <% String s=request.getParameter("user"); %>
         <div>
             <h1>Get <span style="color: red;">Yourself</span> Registered!!</h1>
         </div>
@@ -111,7 +111,7 @@
        <div id="main">
             <fieldset>
                 
-                <form action="SaveProduct" method="post" enctype="multipart/form-data" >
+                <form action="SaveProduct?user=<%=s%>" method="post" enctype="multipart/form-data" >
 
 
                     <div>

@@ -68,16 +68,17 @@
   <body>
       
       <h1>LOGIN
-          <% String s=(String)request.getAttribute("user");
-   PrintWriter out1=response.getWriter();
-   out1.println(s);
+          <% String s=request.getParameter("user");
+   //PrintWriter out1=response.getWriter();
+   
+   //out1.println(s);
 %> </h1>
 
       <div id="main">
           
             <fieldset>
           
-        <form action="VerifyUser.jsp" method="post" >
+        <form action="VerifyUser.jsp?user=<%=s%>" method="post" >
   <br>
             
           
@@ -96,16 +97,9 @@
   </fieldset>
             
       </div>         
-      <p style="color:white; text-align: center">Not a member? <a style="color:#ff0066" href="Register.jsp">Sign up now</a> </p>
+  <p style="color:white; text-align: center">Not a member? <a style="color:#ff0066" href="Register.jsp?user=<%=s%>">Sign up now</a> </p>
 
       
-      <form action="VerifyUser.jsp">
-          <div class="admin">
-         <div class="form__field">
-             <input type="radio" value="AdminLogin" >
-        </div>
-              </div>
-          </form>
       
     </div>
 

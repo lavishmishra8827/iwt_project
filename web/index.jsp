@@ -91,9 +91,9 @@
         <div ><h2 id="header1" style="padding-left: 0px">Log in to explore more</h2>
          </div>
         <br>
-        <div style="text-align: center"><a  href="teacher_console.jsp" class="button-secondary">I'm a Teacher</a></div>
+        <div style="text-align: center"><a  href="login.jsp?user=teacher" class="button-secondary">I'm a Teacher</a></div>
         <br></br>
     
-        <div style="text-align: center"><a  href="Login1.html" class="button-secondary">I'm a Student</a></div>
+        <div style="text-align: center"><a  href="login.jsp?user=student" class="button-secondary">I'm a Student</a></div>
         </body>
 </html>

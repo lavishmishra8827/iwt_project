@@ -7,16 +7,24 @@
 
     String username=request.getParameter("userId");
     String password=request.getParameter("password") ;
+    String db="";
     //String direct=request.getParameter("from") ;
     
     HttpSession mySession ;
     
     
+    String s=request.getParameter("user");
+    out.println(s);
+    if(s.equals("student"))
+        db="creait";
+    else 
+        db="teacher";
+    out.println(db);
     
  try{
      Class.forName("com.mysql.jdbc.Driver");
      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_web", "root", "");
-     String query="select userid from creait where userid=? and password=?";
+     String query="select userid from "+db+" where userid=? and password=?";
      PreparedStatement stmt=con.prepareStatement(query);
      stmt.setString(1,username);
      stmt.setString(2,password);
@@ -41,7 +49,12 @@
             mySession.setAttribute("password",password);
             
             //if(direct.equals("admin"))
-                response.sendRedirect("student.jsp");
+            if(s.equals("student"))   
+            response.sendRedirect("student.jsp");
+            else if(s.equals("teacher"))
+                response.sendRedirect("teacher_console.jsp");
+            else
+                out.println("not a verfied user , check index.jsp,login.jsp,verifyUser.jsp");
         
          //   else    
            //     response.sendRedirect("Homepage.jsp");
