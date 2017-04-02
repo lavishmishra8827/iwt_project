@@ -80,7 +80,7 @@ public class SaveProduct extends HttpServlet {
         ps.setBytes(7, b);
         int n=ps.executeUpdate();
         
-        response.sendRedirect("Login1.html");
+        response.sendRedirect("login.jsp?user="+s);
         //out.println("this sldk");
         }catch(Exception e){out.println(e);}
         

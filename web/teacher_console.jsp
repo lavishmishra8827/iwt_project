@@ -4,6 +4,42 @@
     Author     : parth
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%
+    
+    String username="";
+    String city="";
+    String phoneno="";
+    String email="";
+    HttpSession mySession=request.getSession();
+    String userid=(String)mySession.getAttribute("userid");
+    //out.println(userid);
+    if(userid==null)
+       try{
+        response.sendRedirect("index.jsp");}
+    catch(Exception e){}
+    Class.forName("com.mysql.jdbc.Driver");
+     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_web", "root", "");
+     String query="select * from teacher where userid=?" ;
+     PreparedStatement stmt=con.prepareStatement(query);
+     stmt.setString(1,userid);
+     ResultSet rs=stmt.executeQuery();
+     boolean loginornot=rs.next();
+     if(loginornot)
+     {
+      username=rs.getString(3);
+     city=rs.getString(4);
+     phoneno=rs.getString(5);
+      email=rs.getString(6);
+     }
+    
+        
+%>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,7 +66,7 @@ ENCTYPE="multipart/form-data">
         </div>
        <div style='background-color:#2fe1db;'>    
            <ul style=" padding-top:0px;width:160px;float: right;padding-right: 20px">
-           <li style="float: right"> <a href="index.jsp"> Logout</a></li>
+           <li style="float: right"> <a href="logout.jsp"> Logout</a></li>
            <li style="float:right;margin-right: 20px"><a href="index.jsp"> Home </a></li>
         </ul>
        <h1 style='text-align: center;font-family: papyrus;font-size: 50px;text-decoration: none'>Teacher's Console</h1>

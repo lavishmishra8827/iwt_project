@@ -1,4 +1,4 @@
 <% HttpSession mysession=request.getSession();
 mysession.invalidate();
-response.sendRedirect("Login1.html");
+response.sendRedirect("index.jsp");
 %>
