@@ -26,56 +26,67 @@
         </div>
             
         </form>
-         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://localhost/project_web"
-     user="root"  password=""/>
- 
-<sql:query dataSource="${snapshot}" var="result">
-<query>SELECT * from Attendance;</query>
-</sql:query>
+         
  <%
 String subj=request.getParameter("listy"); 
+int flag=0;
+if(subj==null)
+     
 session.putValue("listy",subj);
 //out.println(""+subj);
 //String pwd=request.getParameter("pwd"); 
 Class.forName("com.mysql.jdbc.Driver"); 
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_web","root",""); 
-Statement st= con.createStatement(); 
-ResultSet rs;
+Statement st= con.createStatement();
+Statement rt= con.createStatement();
+ResultSet rs,tu;
 if(subj.equals("ADA_A"))
-rs = st.executeQuery("select enroll,ADA_A from Attendance"); 
+{
+    rs = st.executeQuery("select enroll,ADA_A from Attendance");
+    tu=rt.executeQuery("select ADA from total_atten");
+    
+} 
 else if(subj.equals("SYSTEM_P"))
-rs = st.executeQuery("select enroll,SYSTEM_P from Attendance"); 
+{
+    rs = st.executeQuery("select enroll,SYSTEM_P from Attendance");
+    tu=rt.executeQuery("select SYS from total_atten");
+    
+} 
 else if(subj.equals("OS"))
-rs = st.executeQuery("select enroll,OS from Attendance"); 
-else
-rs = st.executeQuery("select enroll,WEB from Attendance"); 
-%>
-
-<div align="center"><table border="4">
-        <caption> <%=subj%> </caption>
-    <tr>   <th>name</th>
-    <th>attendance</th>
-    </tr>
+{
+    rs = st.executeQuery("select enroll,OS from Attendance");
+    tu=rt.executeQuery("select OS from total_atten");
+    } 
+else 
+{
+    rs = st.executeQuery("select enroll,WEB from Attendance");
+    tu=rt.executeQuery("select WEB from total_atten");
     
-    
-<%    while(rs.next()) {
-//out.println("welcome"+rs.getString(1));  
-%>
-<tr> 
-    <td>
-        
-    <%=rs.getString(1)%>
-    </td>
-    <td>
-        
-    <%=rs.getString(2)%>
-    </td>
-</tr>
+}
 
-<%}%>
-</table>          
+tu.next();
+ %>
+ <div align="center"><table border="4"> 
+        <caption><%=subj%></caption>
+                <tr>
+                <th>name</th>
+                <th>attendance</th>
+                        
+                   <th>total</th>
+                   </tr>
+<% 
+while(rs.next())  { %>    
+
+                   <tr> <td><%=rs.getString(1)%>
+                       </td><td><%=rs.getString(2)%>
+                       </td><td><%=tu.getString(1)%> </td>
+                   </tr>
+   <%
+        }
+%>
+ </table>
 </div>
+
     </body>
 </html>
 
