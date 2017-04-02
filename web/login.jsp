@@ -1,0 +1,121 @@
+<%-- 
+    Document   : login
+    Created on : 29 Mar, 2017, 5:29:59 PM
+    Author     : lenovo
+--%>
+
+<%@page import="java.io.PrintWriter"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<html >
+  <head>
+      
+      
+      
+    <meta charset="UTF-8">
+    <title>Login</title>   
+        <link rel="stylesheet" href="styler.css">
+
+        <style type="text/css">
+        body{
+         background-image: url('login_image.jpg')   
+        
+        }
+        .description em{
+          text-decoration-color:#ffffff;
+        }
+        .admin{
+            position: absolute;
+            top:5px;
+            right:5px;
+            padding: 5px;
+            float: right;
+        }
+.button-secondary {
+                         background-color: #ff0080;
+                         border-radius: 14px;
+                         border:activeborder;
+                         color: white;
+                         padding: 15px 32px;
+                         text-align: center;
+                         text-decoration: none;
+                         font-size: 16px;
+                         font-family: sans-serif;
+			}        
+        
+        </style>
+    <script type="text/javascript">
+        function validatePassword()
+        {//alert('jjhkjhkhkjh');
+         var i=document.getElementById("loginpassword");
+        alert(i.value);
+        var j=i.value.toString();
+        var k=j.length;
+        for(int )
+        
+        alert(k);
+        
+            
+            
+            
+        }
+        
+    </script>
+        
+  </head>
+
+  <body>
+      
+      <h1>LOGIN
+          <% String s=(String)request.getAttribute("user");
+   PrintWriter out1=response.getWriter();
+   out1.println(s);
+%> </h1>
+
+      <div id="main">
+          
+            <fieldset>
+          
+        <form action="VerifyUser.jsp" method="post" >
+  <br>
+            
+          
+          <input  id="login_username" type="text" class="input_field" placeholder="Username" required name="userId"  >
+            <br><br>
+
+          
+          <input  id="loginpassword" type="password" class="input_field"  required name="password" placeholder="password" onblur="validatePassword();">
+            <br><br><br>
+
+            <input class="submit_b" type="submit" value="Sign In" >
+        
+         
+          
+      </form>
+  </fieldset>
+            
+      </div>         
+      <p style="color:white; text-align: center">Not a member? <a style="color:#ff0066" href="Register.jsp">Sign up now</a> </p>
+
+      
+      <form action="VerifyUser.jsp">
+          <div class="admin">
+         <div class="form__field">
+             <input type="radio" value="AdminLogin" >
+        </div>
+              </div>
+          </form>
+      
+    </div>
+
+  </div>
+
+</body>
+    
+    
+    
+    
+    
+  </body>
+</html>

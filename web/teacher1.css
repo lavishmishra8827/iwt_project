@@ -1,0 +1,81 @@
+
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-Feb-2017, 18:38:01
+    Author     : parth
+*/
+.modal:before{
+ content: "";
+ position:fixed;
+ top:0;
+ left:0;
+    
+}
+.modal:target .modalContainer{
+ -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+     transform: translate(-50%, 0);   
+}
+.modal:target:before{
+ display: block;   
+    
+}
+.modalContainer{
+ position: fixed;
+ background-color:#D5DBDB;
+ border: 1px solid #07090a;
+ left:50%;
+ padding:20px;
+ border-radius:5px;
+ -webkit-transform: translate(-50%, -200%);
+    -ms-transform: translate(-50%, -200%);
+     transform: translate(-50%, -200%);
+    
+}
+html{
+ margin: 0px;   
+    
+}
+li{
+    float: right;
+    list-style: none;
+}
+body{
+background-color: #ffffff;    
+margin: 0px;    
+}
+.four{
+        border: 1px solid brown;
+        width: auto;
+        float:right;
+        background-color: #FDF2E9;
+        font-family: sans-serif;
+        margin-right: 420px;
+        }
+.xyz {
+    margin:0px ;
+    position:absolute;
+    margin-top: 0px;
+    float:right;
+    background-color:#f89696;
+}
+
+h1{
+    margin: 0;    
+    font-family: cursive;
+    color: #f81c1c; 
+  }
+    .button1{
+             background-color:#ccffcc;   
+        border-radius: 100%;
+        width: 100px;
+        height :100px;
+        font-family: papyrus;
+        text-decoration-color: black ;
+        
+    }   

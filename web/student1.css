@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-Feb-2017, 18:38:01
+    Author     : parth
+*/
+body{
+    
+background-color: #FDF2E9;    
+margin: 0px;    
+}
+.button_log{
+ float: right;   
+    text-decoration: underline;
+    color: #606468;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    
+}
+.one {
+    background-color: antiquewhite; 
+    
+}
+p{
+  font-family: cursive;
+  font-size: 15px;
+    
+    
+}
+.two {
+    background-color: #FDF2E9;
+    width:200px; 
+    float:left;
+   padding-left: 130px;
+    border-radius: 50%;
+     height:200px;
+    }
+    .img{
+    border-radius: 50%;    
+    max-height: 100%;
+         max-width: 100%;
+        
+    }
+    h1{
+        font-family: cursive;
+    }
+    .three{
+        width: 500px;
+        float:right;
+        background-color: #FDF2E9;
+        font-family: sans-serif;
+        margin-right: 420px;
+    }  
+    .four{
+        border: 1px solid brown;
+        width: auto;
+        float:right;
+        background-color: #FDF2E9;
+        font-family: sans-serif;
+        margin-right: 420px;
+        }
+    .button_1{
+        background-color:#ccffcc;   
+        border-radius: 100%;
+        width: 100px;
+        height :100px;
+        font-family: papyrus;
+        
+        text-decoration-color: black ;
+    }
+    .button2{
+        background-color:#ccffcc;   
+        border-radius: 10%;
+        width: 100px;
+        height :40px;
+        font-family: papyrus;
+        
+        text-decoration-color: black ;
+    }
+    .imageside{
+        border-radius: 5px;
+        max-height: 100%;
+         max-width: 100%;
+    }
+h1{
+    color: red;
+    
+
+}
