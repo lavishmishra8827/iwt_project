@@ -52,8 +52,7 @@ and open the template in the editor.
         </div>
         <div class="two">
             <img class='img' src="<%="ImageReader?id="+userid%>">
-            <div style='text-align
-                 +: center'> Personal Information</div>
+            <div style='text-align: center'> Personal Information</div>
             <table border='1'>
                 <tr>
                     <th> Name</th>
