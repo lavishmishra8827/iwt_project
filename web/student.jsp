@@ -19,7 +19,7 @@ and open the template in the editor.
     //out.println(userid);
     if(userid==null)
        try{
-        response.sendRedirect("indez.jsp");}
+        response.sendRedirect("index.jsp");}
     catch(Exception e){}
     Class.forName("com.mysql.jdbc.Driver");
      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_web", "root", "");
@@ -44,6 +44,21 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="student1.css">
+            <script>(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+        </script>
     </head>
     <body>
         <a class="button_log" href="logout.jsp">Logout</a>
