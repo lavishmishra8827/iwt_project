@@ -16,6 +16,10 @@
         <servlet-name>ImageReader</servlet-name>
         <servlet-class>ImageReader</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>question_upload</servlet-name>
+        <servlet-class>com.example.upload.question_upload</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FileDBUpload</servlet-name>
         <url-pattern>/FileDBUpload</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ImageReader</servlet-name>
         <url-pattern>/ImageReader</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>question_upload</servlet-name>
+        <url-pattern>/question_upload</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
