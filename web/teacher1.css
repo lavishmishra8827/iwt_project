@@ -26,12 +26,18 @@ and open the template in the editor.
     
 }
 .modalContainer{
- position: fixed;
- background-color:#D5DBDB;
+ position: absolute;
+ background-color:#eee;
  border: 1px solid #07090a;
  left:50%;
+ align-content: center;
+ text-align: center;
+ font: papyrus;
  padding:20px;
+ margin-top: 50px;
  border-radius:5px;
+ width:560px;
+ height:200px ;
  -webkit-transform: translate(-50%, -200%);
     -ms-transform: translate(-50%, -200%);
      transform: translate(-50%, -200%);

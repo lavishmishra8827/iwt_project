@@ -2,7 +2,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%
-
+    String quiz_name=request.getParameter("quiz_name");
     String rr[]=request.getParameterValues("name[]");
     String mcq[]=request.getParameterValues("mcq[]");
     String ans[]=request.getParameterValues("ans[]");
@@ -13,11 +13,21 @@
     try{
      Class.forName("com.mysql.jdbc.Driver");
      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project_web", "root", "");
-         
-            
-         String query="insert into quiz1 values(?,?,?,?,?,?,?)";
+        String query1="insert into quizes (q_name) values(?)";
+        PreparedStatement stmt3=con.prepareStatement(query1);
+        stmt3.setString(1,quiz_name);
+        stmt3.execute();
+        
+     
+     
+     
+     String q1="create table "+ quiz_name+"(no int(8) not null,question varchar(2000),op1 varchar(200),op2 varchar(200),op3 varchar(200),op4 varchar(200),ans varchar(8),primary key(no))";
+          PreparedStatement stm=con.prepareStatement(q1);
+          stm.executeUpdate();
+         String query="insert into "+ quiz_name+ " values(?,?,?,?,?,?,?)";
          
          PreparedStatement stmt=con.prepareStatement(query);
+         
          for(j=0;j<i;j++){
             
              

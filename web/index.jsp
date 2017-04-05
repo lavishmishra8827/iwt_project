@@ -78,7 +78,7 @@
         </head>
     <body>
         
-		<div><ul><li ><a style="color: white" href=# >Contact us</a></li>
+		<div><ul><li ><a style="color: white" href=questiondaalo.jsp >Contact us</a></li>
 		                 <li ><a style="color: white" href=#> About</a></li>
 		                 <li ><a style="color: white" href=#>Home</a></li>
                          </ul>

@@ -90,6 +90,8 @@ and open the template in the editor.
         <div class="four" style='padding-left: 10px;padding-right: 10px ;text-align: '>
             <br>
             <Button class="button_1">View Performance</Button>
+           <a href="quizlist.jsp"><Button class="button_1">Attempt Quiz</Button></a>
+            
             <button class="button_1">Edit Profile</button>
             <a href="attendance.jsp"><button class="button_1"> View Attendance</button></a>
             <button class="button_1">Home</button>

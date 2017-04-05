@@ -63,19 +63,31 @@
 </script>
         </head>
     <body>
-     
+         
         <div class="modal" id="openModal">
 	<div class="modalContainer">
-		<a href="#close" title="Close" class="close">X</a>
-<center> 
+            <div style="text-align: center">
+                <div style="background: #00cccc ;margin-top: 0px">
+                    <h1 style="color: #333333">Upload files to the library!</h1>
+            
+        </div>
+            <center> 
 <form name="attach" action="UploadServlet" method="post" 
 ENCTYPE="multipart/form-data"> 
-<p><input type="file" name=attach size=16000 > </p> 
-<br/> 
 <br>
-<input type="submit" name="upl" value="UPLOAD"> 
+<br>
+    <input type="file" name=attach size=16000 >  
+<br>
+<br>
+<br>
+
+<label><input style="border-radius: 40px; background: #00ccff; width: 100px;height: 20px" type="submit" name="upl" value="UPLOAD"></label> 
+<br>
+<br>
+<button style="border-radius: 40px; background:#00ccff"><a style="text-decoration: none" href="#close" title="Close" class="close" style="font-family: papyrus ;float: right">Close</a></button>
 </form> 
 </center>
+            </div>
         </div>
         </div>
        <div style='background-color:#2fe1db;'>    
@@ -91,7 +103,7 @@ ENCTYPE="multipart/form-data">
       <div style=" border: 1px solid brown;width: auto;float:right;background-color: #FDF2E9;font-family: sans-serif;margin-right: 420px;">
           <button class='button1'>  <a style='text-decoration: none;height: 50px' href="#openModal">Upload_File  </a>  </button>
          <button class='button1'> <a style='text-decoration: none' href="displayBLOB.jsp">View Library</a></button>
-        <button class='button1'> <a style='text-decoration: none' href="displayBLOB.jsp">Upload Quiz</a></button>
+        <button class='button1'> <a style='text-decoration: none' href="questiondaalo.jsp">Upload Quiz</a></button>
         <button class='button1'> <a style='text-decoration: none' href="displayBLOB.jsp">View Student's profile</a></button>
        <button class='button1'> <a style='text-decoration: none' href="displayBLOB.jsp">View Library</a></button>
        
