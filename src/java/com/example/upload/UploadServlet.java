@@ -84,15 +84,19 @@ public class UploadServlet extends HttpServlet {
             Iterator iter = items.iterator();
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
-
+                
+                
+                
                 if (!item.isFormField()) {
                      fileName = new File(item.getName()).getName();
                      fileParth=uploadFolder + File.separator;
                     filePath = uploadFolder + File.separator + fileName;
                     File uploadedFile = new File(filePath);
                     //PrintWriter out1= response.getWriter();
-        String folder=request.getParameter("Points");
-        out1.println(folder);            
+ //updtE START
+                    String folder=request.getParameter("hey");
+                    out1.println(folder);
+        //update done
                     out1.println("Hello"+filePath);
                     // saves the file to upload directory
                     item.write(uploadedFile);
