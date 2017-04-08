@@ -87,6 +87,7 @@ public class UploadServlet extends HttpServlet {
                 
                 
                 
+                
                 if (!item.isFormField()) {
                      fileName = new File(item.getName()).getName();
                      fileParth=uploadFolder + File.separator;
