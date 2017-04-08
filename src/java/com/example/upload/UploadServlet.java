@@ -66,10 +66,11 @@ public class UploadServlet extends HttpServlet {
         // than the configured size threshold. We use temporary directory for
         // java
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
-
+        
         // constructs the folder where uploaded file will be stored
         String uploadFolder = getServletContext().getRealPath("")
                 + File.separator + DATA_DIRECTORY;
+        out1.println(uploadFolder);
 
         // Create a new file upload handler
         ServletFileUpload upload = new ServletFileUpload(factory);
@@ -90,7 +91,8 @@ public class UploadServlet extends HttpServlet {
                     filePath = uploadFolder + File.separator + fileName;
                     File uploadedFile = new File(filePath);
                     //PrintWriter out1= response.getWriter();
-                    
+        String folder=request.getParameter("Points");
+        out1.println(folder);            
                     out1.println("Hello"+filePath);
                     // saves the file to upload directory
                     item.write(uploadedFile);
@@ -138,7 +140,7 @@ public class UploadServlet extends HttpServlet {
            
             out1.println("ho gaya database mein save");
           
-            response.sendRedirect("welcome.jsp?name="+fileName);
+            //response.sendRedirect("welcome.jsp?name="+fileName);
             } 
        catch (Exception ex) {
             message = "ERROR: " + ex.getMessage();

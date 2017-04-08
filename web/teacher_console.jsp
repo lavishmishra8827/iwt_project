@@ -76,6 +76,16 @@
 ENCTYPE="multipart/form-data"> 
 <br>
 <br>
+     <select name="Points" size="1" id="Points">
+                <option value="ada" selected>ada</option>
+                <option value="os">os</option>
+                <option value="iwt">iwt</option>
+                <option value="iem">iem</option>
+                <option value="sp">sp</option>
+    </select>
+<br>
+<br>
+
     <input type="file" name=attach size=16000 >  
 <br>
 <br>
