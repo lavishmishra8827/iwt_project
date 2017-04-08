@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -80,23 +82,34 @@ public class UploadServlet extends HttpServlet {
 
         try {
             // Parse the request
-            List items = upload.parseRequest(request);
+            List items = null;
+            try {
+                items = upload.parseRequest(request);
+            } catch (FileUploadException ex) {
+                Logger.getLogger(UploadServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
             Iterator iter = items.iterator();
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 
-                
-                
+                String s=item.getFieldName();
+                if(s.equals("hey")){
+                    String v1=item.getString();
+                        out1.println("Here"+v1);
+                }
                 
                 if (!item.isFormField()) {
                      fileName = new File(item.getName()).getName();
+                     
+                        
+                     
                      fileParth=uploadFolder + File.separator;
                     filePath = uploadFolder + File.separator + fileName;
                     File uploadedFile = new File(filePath);
                     //PrintWriter out1= response.getWriter();
  //updtE START
-                    String folder=request.getParameter("hey");
-                    out1.println(folder);
+ //                   String folder=request.getParameter("hey");
+   //                 out1.println(folder);
         //update done
                     out1.println("Hello"+filePath);
                     // saves the file to upload directory
